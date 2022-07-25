@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p!)4f4tn4_vin)auo-!2!xd8=*mm(5w-d(@rr2u1)gbh8d56*3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://alramama-nps.herokuapp.com/']
+ALLOWED_HOSTS = ['alramama-nps.herokuapp.com']
 
 
 # Application definition
