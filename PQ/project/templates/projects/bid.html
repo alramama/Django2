@@ -1,0 +1,36 @@
+{%  extends 'projects/main.html' %}
+{% block content %}
+{%  include 'projects/status_bid.html' %}
+<br>
+<div class="row">
+	<div class="col-md-12">
+		<h5>Tendering Management:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'create_bid' %}">Create Bid</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Bid name</th>
+					<th>Reference number</th>
+					<th>End user</th>
+					<th>Last date_inquiries</th>
+					<th>Deadline</th>
+					<th>update</th>
+					<th>BOQ</th>
+				</tr>
+				{% for i in bid %}
+					<tr>
+						<td>{{i.Bid_name}}</td>
+						<td>{{i.Reference_number}}</td>
+						<td>{{i.End_user}}</td>
+						<td>{{i.Last_date_inquiries}}</td>
+						<td>{{i.Deadline}}</td>
+						<td><a class="btn btn-sm btn-info" href="{% url 'update_bid' i.id %}">Update</a></td>
+						<td><a class="btn btn-sm btn-info" href="">createbid_boq</a></td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

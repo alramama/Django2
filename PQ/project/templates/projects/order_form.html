@@ -1,0 +1,24 @@
+{%  extends 'projects/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body">
+
+			<form action="" method="POST">
+				<table class="table table-sm">
+				<tr>
+					<th>{% csrf_token %}</th>
+					<th>{{form}}</th>
+					<th><input type="submit" name="Submit"></th>
+				</tr>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

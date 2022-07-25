@@ -1,0 +1,39 @@
+{%  extends 'projects/main.html' %}
+{% block content %}
+{%  include 'projects/status_bid.html' %}
+<br>
+<div class="row">
+	<div class="col-md-6">
+		<h5>Tendering Management:</h5>
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Item_no</th>
+					<th>Item_name</th>
+					<th>Unit</th>
+					<th>Item_description</th>
+					<th>Mandatory_List</th>
+					<th>Code</th>
+					<th>Unit price</th>
+					<th>Total price</th>
+					<th>Update</th>
+				</tr>
+				{% for i in boq %}
+					<tr>
+						<td>{{i.Item_no}}</td>
+						<td>{{i.Item_name}}</td>
+						<td>{{i.Unit}}</td>
+						<td>{{i.Item_description}}</td>
+						<td>{{i.Mandatory_List}}</td>
+						<td>{{i.Code}}</td>
+						<td>{{i.Code}}</td>
+						<td>{{i.Code}}</td>
+						<td><a class="btn btn-sm btn-info" href="{% url 'update_BOQ' i.id%}">Update</a></td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

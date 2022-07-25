@@ -1,0 +1,45 @@
+{%  extends 'projects/main.html' %}
+{% block content %}
+{%  include 'projects/status.html' %}
+
+<br>
+
+<div class="row">
+	<div class="col-md-12">
+		<h5>On-Going Projects:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'create_project' %}">Create Project</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Project</th>
+					<th>Start_date</th>
+					<th>End_date</th>
+					<th>Value</th>
+					<th>Customer</th>
+					<th>Contract No</th>
+					<th>Update</th>
+				</tr>
+				{% for i in project %}
+					<tr>
+						<td>{{i.Project}}</td>
+						<td>{{i.Start_date}}</td>
+						<td>{{i.End_date}}</td>
+						<td>{{i.Value}}</td>
+						<td>{{i.customer}}</td>
+						<td>{{i.Contract_No}}</td>
+						<td><a class="btn btn-sm btn-info" href="{% url 'update_order' i.id %}">Update</a></td>
+					</tr>
+				{% endfor %}
+
+
+
+			</table>
+		</div>
+	</div>
+
+
+</div>
+
+{% endblock %}
+
